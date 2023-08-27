@@ -77,7 +77,16 @@ def send_welcome(message):
 
 @bot.message_handler(commands=['add'])
 def add_task_command(message):
-    task = message.text.split(' ', 1)[1]
+    # Splitting the message into parts to determine if the user provided a task description
+    parts = message.text.split(' ', 1)
+
+    # If there's only one part, it means the user didn't provide a task description
+    if len(parts) == 1:
+        bot.reply_to(message, "Please provide a task description. Use: /add <your_task>")
+        return
+
+    # Extracting the task description
+    task = parts[1]
     add_task(message.chat.id, task)
     bot.reply_to(message, f"Task '{task}' added!")
 
