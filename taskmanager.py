@@ -96,12 +96,14 @@ def list_tasks_command(message):
         
         bot.send_message(message.chat.id, f"{task_id}. {status} {description}", reply_markup=markup)
 
+
 @bot.callback_query_handler(func=lambda call: call.data.startswith('done_'))
 def callback_mark_done(call):
     task_id = int(call.data.split("_")[1])
     mark_completed(task_id)
     bot.answer_callback_query(call.id, "Task marked as done!")
     bot.edit_message_text("✅ Task completed!", call.message.chat.id, call.message.message_id)
+
 
 @bot.message_handler(commands=['delete'])
 def delete_task_command(message):
