@@ -67,16 +67,19 @@ def get_tasks(user_id):
 
 # Telegram Bot Handlers
 
+
 @bot.message_handler(commands=['start'])
 def send_welcome(message):
     add_user(message.chat.id)
     bot.reply_to(message, "Welcome to the Task Manager Bot!\nUse /add <task> to add a task, /list to list tasks, /delete <task_id> to delete.")
+
 
 @bot.message_handler(commands=['add'])
 def add_task_command(message):
     task = message.text.split(' ', 1)[1]
     add_task(message.chat.id, task)
     bot.reply_to(message, f"Task '{task}' added!")
+
 
 @bot.message_handler(commands=['list'])
 def list_tasks_command(message):
