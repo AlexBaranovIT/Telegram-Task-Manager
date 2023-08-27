@@ -1,4 +1,5 @@
 import sqlite3
+# pip install telebot
 import telebot
 from telebot import types
 
