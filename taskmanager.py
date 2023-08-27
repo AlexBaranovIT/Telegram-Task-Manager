@@ -111,6 +111,7 @@ def delete_task_command(message):
     delete_task(task_id)
     bot.reply_to(message, f"Task {task_id} deleted!")
 
+
 # Initialize the database and start the bot
 setup_database()
 
