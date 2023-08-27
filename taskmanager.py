@@ -30,11 +30,13 @@ def setup_database():
         )''')
         conn.commit()
 
+
 def add_user(user_id):
     with sqlite3.connect(DATABASE) as conn:
         cur = conn.cursor()
         cur.execute("INSERT OR IGNORE INTO users (user_id) VALUES (?)", (user_id,))
         conn.commit()
+
 
 def add_task(user_id, description):
     with sqlite3.connect(DATABASE) as conn:
@@ -42,17 +44,20 @@ def add_task(user_id, description):
         cur.execute("INSERT INTO tasks (user_id, description, completed) VALUES (?, ?, 0)", (user_id, description))
         conn.commit()
 
+
 def delete_task(task_id):
     with sqlite3.connect(DATABASE) as conn:
         cur = conn.cursor()
         cur.execute("DELETE FROM tasks WHERE task_id=?", (task_id,))
         conn.commit()
 
+
 def mark_completed(task_id):
     with sqlite3.connect(DATABASE) as conn:
         cur = conn.cursor()
         cur.execute("UPDATE tasks SET completed=1 WHERE task_id=?", (task_id,))
         conn.commit()
+
 
 def get_tasks(user_id):
     with sqlite3.connect(DATABASE) as conn:
