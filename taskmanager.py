@@ -107,5 +107,5 @@ def delete_task_command(message):
 # Initialize the database and start the bot
 setup_database()
 
-if __name__ == "__main__":
-    bot.polling()
+
+bot.polling()
