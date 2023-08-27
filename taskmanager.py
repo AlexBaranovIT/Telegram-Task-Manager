@@ -108,4 +108,4 @@ def delete_task_command(message):
 setup_database()
 
 
-bot.polling()
+bot.polling(none_stop=True)
