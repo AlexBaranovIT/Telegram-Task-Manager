@@ -104,7 +104,7 @@ def list_tasks_command(message):
         
         markup = types.InlineKeyboardMarkup()
         button_text = "Mark as Done" if not completed else "Already Done"
-        callback_data = f"done_{task_id}" if not completed else "noop"
+        callback_data = f"done_{task_id}" if not completed else "noop" 
         markup.add(types.InlineKeyboardButton(text=button_text, callback_data=callback_data))
         
         bot.send_message(message.chat.id, f"{task_id}. {status} {description}", reply_markup=markup)
