@@ -98,7 +98,7 @@ def list_tasks_command(message):
         bot.send_message(message.chat.id, "You have no tasks.")
         return
     
-    for task in tasks:
+    for task in tasks: 
         task_id, description, completed = task
         status = "✅" if completed else "❌"
         
