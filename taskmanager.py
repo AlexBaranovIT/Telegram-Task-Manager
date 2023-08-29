@@ -9,7 +9,7 @@ DATABASE = "tasks.db"
 # Telegram Configuration
 TOKEN = "YOUR_TELEGRAM_BOT_TOKEN"
 bot = telebot.TeleBot(TOKEN)
-
+ 
 # Database Initialization and Core Functions
 
 
