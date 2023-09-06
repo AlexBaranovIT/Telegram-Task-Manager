@@ -1,7 +1,7 @@
 import sqlite3
 # pip install telebot
 import telebot
-from telebot import types
+from telebot import types 
 
 # Database Configuration
 DATABASE = "tasks.db"
