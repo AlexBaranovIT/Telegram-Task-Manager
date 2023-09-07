@@ -12,7 +12,7 @@ bot = telebot.TeleBot(TOKEN)
 
 
 # Database Initialization and Core Functions
-def setup_database():
+def setup_database(): 
     with sqlite3.connect(DATABASE) as conn:
         cur = conn.cursor()
         cur.execute('''
